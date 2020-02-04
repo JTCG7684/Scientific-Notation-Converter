@@ -30,7 +30,14 @@ namespace Scientific_Notation_Converter
                 }
                 else if (decision == "Quit" || decision == "quit")
                 {
+                    Console.WriteLine("\nThank you for using this application!");
+                    Console.WriteLine("\nPress any button to exit...");
+                    Console.ReadLine();
                     break;
+                }
+                else {
+                    Console.WriteLine("\nI'm sorry, but that is not a valid choice...");
+                    Thread.Sleep(1000);
                 }
 
             }

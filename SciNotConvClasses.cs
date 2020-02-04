@@ -6,73 +6,87 @@ namespace Program_Classes {
     {
         private int power;
         private double number;
+
         public SciNot()
         {
-            Console.WriteLine("\nEnter your number, and I will put it in Scientific Notation for you!");
-            number = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("\nYour number was {0}. Is that correct?", number);
-            string yesOrNo = Console.ReadLine();
-            if (yesOrNo == "Yes" || yesOrNo == "yes")
+            while (true)
             {
-                if (number >= 10)
+                Console.WriteLine("\nEnter your number, and I will put it in Scientific Notation for you!");
+                try
                 {
-                    while (number >= 10)
+                    number = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("\nYour number was {0}. Is that correct?", number);
+                    string yesOrNo = Console.ReadLine();
+                    if (yesOrNo == "Yes" || yesOrNo == "yes")
                     {
-                        number /= 10;
-                        power += 1;
-                    }
+                        if (number >= 10)
+                        {
+                            while (number >= 10)
+                            {
+                                number /= 10;
+                                power += 1;
+                            }
 
+                        }
+                        else if (number <= -10)
+                        {
+                            while (number <= -10)
+                            {
+                                number /= 10;
+                                power += 1;
+                            }
+                        }
+
+
+                        if (number < 1 && number > 0)
+                        {
+                            while (number < 1)
+                            {
+                                number *= 10;
+                                power -= 1;
+                            }
+
+                            if (number >= 10)
+                            {
+                                number /= 10;
+                                power += 1;
+                            }
+
+
+
+                        }
+                        else if (number > -1 && number < 0)
+                        {
+                            while (number > -1)
+                            {
+                                number *= 10;
+                                power += 1;
+
+                            }
+                            if (number <= -10)
+                            {
+                                number /= 10;
+                                power -= 1;
+                            }
+                        }
+
+                        Console.WriteLine("Your number is {0} times 10 to the {1} power!", number, power);
+                        Thread.Sleep(3000);
+                        break;
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
-                else if (number <= -10)
+                catch
                 {
-                    while (number <= -10)
-                    {
-                        number /= 10;
-                        power += 1;
-                    }
+                    Console.WriteLine("\nThat's not a number!");
+                    continue;
                 }
-
-
-                if (number < 1 && number > 0)
-                {
-                    while (number < 1)
-                    {
-                        number *= 10;
-                        power -= 1;
-                    }
-
-                    if (number >= 10)
-                    {
-                        number /= 10;
-                        power += 1;
-                    }
-
-
-
-                }
-                else if (number > -1 && number < 0)
-                {
-                    while (number > -1)
-                    {
-                        number *= 10;
-                        power += 1;
-
-                    }
-                    if (number <= -10)
-                    {
-                        number /= 10;
-                        power -= 1;
-                    }
-                }
-
-                Console.WriteLine("Your number is {0} times 10 to the {1} power!", number, power);
-                Thread.Sleep(3000);
-
             }
-            else
-            {
-                SciNot no = new SciNot();
-            }
+
         }
     }
 
@@ -83,44 +97,63 @@ namespace Program_Classes {
 
         public Number()
         {
-            Console.WriteLine("\nWhat is your number? Decimals are allowed, and will calculate normally");
-            number = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("\nWhat power is it to?");
-            power = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nYour number is {0} times 10 to the {1} power. Is this correct?", number, power);
-            string yesOrNo = Console.ReadLine();
-            if (yesOrNo == "Yes" || yesOrNo == "yes")
-            {
-                if (number <= 10 || number >= -10)
+            while (true) {
+                Console.WriteLine("\nWhat is your number? Decimals are allowed, and will calculate normally");
+                try
                 {
-                    if (power > 1)
-                    {
-                        while (power >= 1)
-                        {
-                            number *= 10;
-                            power -= 1;
-                        }
-                    }
-                    else if (power < 0)
-                    {
-                        while (power < 0)
-                        {
-                            number /= 10;
-                            power += 1;
-                        }
-
-                    }
-
-
-
-
+                    number = Convert.ToDouble(Console.ReadLine());
                 }
-                Console.WriteLine("Your number in standard form is {0}!", number);
-                Thread.Sleep(3000);
-            }
-            else
-            {
-                Number no = new Number();
+                catch {
+                    Console.WriteLine("\nThat's not a number!");
+                    Thread.Sleep(1000);
+                    continue;
+                }
+                Console.WriteLine("\nWhat power is it to? (Note: If you input a decimal, I will round it.)");
+                try
+                {
+                    power = Convert.ToInt32(Console.ReadLine());
+                }
+                catch {
+                    Console.WriteLine("That's not a number!");
+                    Thread.Sleep(1000);
+                    continue;
+                }
+                Console.WriteLine("\nYour number is {0} times 10 to the {1} power. Is this correct?", number, power);
+                string yesOrNo = Console.ReadLine();
+                if (yesOrNo == "Yes" || yesOrNo == "yes")
+                {
+                    if (number <= 10 || number >= -10)
+                    {
+                        if (power > 1)
+                        {
+                            while (power >= 1)
+                            {
+                                number *= 10;
+                                power -= 1;
+                            }
+                        }
+                        else if (power < 0)
+                        {
+                            while (power < 0)
+                            {
+                                number /= 10;
+                                power += 1;
+                            }
+
+                        }
+
+
+
+
+                    }
+                    Console.WriteLine("Your number in standard form is {0}!", number);
+                    Thread.Sleep(3000);
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
             }
         }
 
