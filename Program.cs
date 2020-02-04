@@ -14,8 +14,6 @@ namespace Scientific_Notation_Converter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test test...");
-            Thread.Sleep(1000);
             Console.WriteLine("Hello User! This is a scientific notation converter!");
             Thread.Sleep(3000);
             while (true)
