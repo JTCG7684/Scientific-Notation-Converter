@@ -23,10 +23,12 @@ namespace Scientific_Notation_Converter
                 if (decision == "Sci" || decision == "sci")
                 {
                     SciNot s = new SciNot();
+                    s.SciNotCalculator();
                 }
                 else if (decision == "Num" || decision == "num")
                 {
                     Number n = new Number();
+                    n.NumberCalculator();
                 }
                 else if (decision == "Quit" || decision == "quit")
                 {

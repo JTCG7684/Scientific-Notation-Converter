@@ -7,7 +7,7 @@ namespace Program_Classes {
         private int power;
         private double number;
 
-        public SciNot()
+        public void SciNotCalculator()
         {
             while (true)
             {
@@ -95,7 +95,7 @@ namespace Program_Classes {
         private double number;
         private int power;
 
-        public Number()
+        public void NumberCalculator()
         {
             while (true) {
                 Console.WriteLine("\nWhat is your number? Decimals are allowed, and will calculate normally");
