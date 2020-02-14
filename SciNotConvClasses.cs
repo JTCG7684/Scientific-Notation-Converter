@@ -9,6 +9,7 @@ namespace Program_Classes {
 
         public void SciNotCalculator()
         {
+            Console.ResetColor();
             while (true)
             {
                 Console.WriteLine("\nEnter your number, and I will put it in Scientific Notation for you!");
@@ -70,8 +71,20 @@ namespace Program_Classes {
                             }
                         }
 
-                        Console.WriteLine("Your number is {0} times 10 to the {1} power!", number, power);
+
+                        
+                        Console.ResetColor();
+                        Console.Write("\nYour number is ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("{0} ", number);
+                        Console.ResetColor();
+                        Console.Write("times 10 to the ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("{0} ", power);
+                        Console.ResetColor();
+                        Console.Write("power!");
                         Thread.Sleep(3000);
+                        Console.WriteLine("\n============================================================");
                         break;
 
                     }
@@ -82,7 +95,10 @@ namespace Program_Classes {
                 }
                 catch
                 {
-                    Console.WriteLine("\nThat's not a number!");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nError! If you didn't answer with a number, make sure you do!");
+                    Console.ResetColor();
+                    Thread.Sleep(2000);
                     continue;
                 }
             }
@@ -92,11 +108,13 @@ namespace Program_Classes {
 
     class Number
     {
+        
         private double number;
         private int power;
 
         public void NumberCalculator()
         {
+            Console.ResetColor();
             while (true) {
                 Console.WriteLine("\nWhat is your number? Decimals are allowed, and will calculate normally");
                 try
@@ -146,8 +164,14 @@ namespace Program_Classes {
 
 
                     }
-                    Console.WriteLine("Your number in standard form is {0}!", number);
+                    Console.ResetColor();
+                    Console.Write("\nYour number in standard form is ");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("{0}", number);
+                    Console.ResetColor();
+                    Console.Write("!");
                     Thread.Sleep(3000);
+                    Console.WriteLine("\n============================================================");
                     break;
                 }
                 else
