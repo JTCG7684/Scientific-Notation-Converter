@@ -29,7 +29,3 @@ Run the .exe file.
 
 It should run the program. You can move this .exe file anywere; it will still work. However, if you build the program again, it will create another .exe file.
 
-Other ways to run:
-
-Repl
-[![Run on Repl.it](https://repl.it/badge/github/JTCG7684/Scientific-Notation-Converter)](https://repl.it/github/JTCG7684/Scientific-Notation-Converter)
